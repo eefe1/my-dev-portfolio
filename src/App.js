@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Box from "@mui/material/Box";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box
+          sx={{
+            p: 4,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <Box>left logo</Box>
+          <Box>main navbar</Box>
+          <Box>right links</Box>
+        </Box>
+        <Box sx={{}}>main</Box>
+        <Box
+          sx={{
+            p: 4,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <Box>footer left logo</Box>
+            <Box>footer left information section</Box>
+          </Box>
+
+          <Box
+          gap={4}
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent:'space-around'
+            }}
+          >
+            <Box> footer menu1</Box>
+            <Box> footer menu2</Box>
+          </Box>
+        </Box>
+      </Box>
     </div>
   );
 }
