@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import EggIcon from "@mui/icons-material/Egg";
 import CallMadeIcon from "@mui/icons-material/CallMade";
 import Divider from "@mui/material/Divider";
+import NavbarToogle from "./components/NavbarToogle";
+
 
 function App() {
   return (
@@ -87,8 +89,7 @@ function App() {
                 "box-shadow 1s cubic-bezier(.23, 1, .32, 1), border .6s cubic-bezier(.165, .84, .44, 1)",
             }}
           >
-            <Box>Work</Box>
-            <Box>Info</Box>
+          <NavbarToogle/>
           </Box>
 
           <Box
