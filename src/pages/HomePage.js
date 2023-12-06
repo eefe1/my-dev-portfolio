@@ -5,7 +5,7 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-function InfoPage() {
+function HomePage() {
   return (
     <div className="App">
       <Box
@@ -13,7 +13,6 @@ function InfoPage() {
         sx={{ display: "flex", flexDirection: "column", color: "#f2f2f2" }}
       >
         <Navbar />
-        test
         <Main />
         <Divider sx={{ bgcolor: "rgba(242, 242, 242, .1)" }} />
         <Footer />
@@ -22,4 +21,4 @@ function InfoPage() {
   );
 }
 
-export default InfoPage;
+export default HomePage;

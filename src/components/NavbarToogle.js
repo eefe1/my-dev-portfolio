@@ -3,7 +3,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { ThemeProvider } from "@mui/material/styles";
 import { Theme } from "../Theme/theme";
-import Link from "@mui/material/Link";
+import { useHistory } from "react-router-dom";
 
 const NavbarToogle = () => {
   const [alignment, setAlignment] = React.useState("work");
@@ -11,7 +11,14 @@ const NavbarToogle = () => {
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
+  const history = useHistory();
 
+  const NavigateInfoPage = () => {
+    history.push("/InfoPage");
+  };
+  const NavigateHomePage = () => {
+    history.push("/HomePage");
+  };
   return (
     <ThemeProvider theme={Theme}>
       <ToggleButtonGroup
@@ -20,10 +27,18 @@ const NavbarToogle = () => {
         onChange={handleChange}
         aria-label="Platform"
       >
-        <ToggleButton value="work" aria-label="left aligned">
+        <ToggleButton
+          value="work"
+          aria-label="left aligned"
+          onClick={NavigateHomePage}
+        >
           Work
         </ToggleButton>
-        <ToggleButton value="info" aria-label="centered">
+        <ToggleButton
+          value="info"
+          aria-label="centered"
+          onClick={NavigateInfoPage}
+        >
           Info
         </ToggleButton>
       </ToggleButtonGroup>

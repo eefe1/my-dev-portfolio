@@ -1,23 +1,25 @@
 import "./App.css";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import InfoPage from "./pages/InfoPage";
 
 function App() {
   return (
-    <div className="App">
-      <Box
-        gap={10}
-        sx={{ display: "flex", flexDirection: "column", color: "#f2f2f2" }}
-      >
-        <Navbar />
-        <Main />
-        <Divider sx={{ bgcolor: "rgba(242, 242, 242, .1)" }} />
-        <Footer />
-      </Box>
-    </div>
+    <Router>
+      <Switch>
+        <Route key="HomePage" exact path={["/", "/HomePage"]}>
+          <HomePage />
+        </Route>
+
+        <Route key="InfoPage" exact path="/InfoPage">
+          <InfoPage />
+        </Route>
+
+        {/*         <Route path="*">
+            <Error404 />
+        </Route> */}
+      </Switch>
+    </Router>
   );
 }
 
